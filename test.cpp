@@ -26,6 +26,8 @@
 
 extern int example1(int, int, int, int, int);
 extern int example2(const int&, const int&, const int&);
+extern int example3();
 
 static_assert(std::is_same<decltype(example1), combinator::value<int, 5>>::value, "");
 static_assert(std::is_same<decltype(example2), combinator::ref<int, 3>>::value, "");
+static_assert(std::is_same<decltype(example3), combinator::value<int, 0>>::value, "");
