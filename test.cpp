@@ -24,8 +24,8 @@
 
 #include <type_traits>
 
-int example1(int, int, int, int, int) { return 0; }
-int example2(const int&, const int&, const int&) { return 0; }
+extern int example1(int, int, int, int, int);
+extern int example2(const int&, const int&, const int&);
 
 static_assert(std::is_same<decltype(example1), combinator::value<int, 5>>::value, "");
 static_assert(std::is_same<decltype(example2), combinator::ref<int, 3>>::value, "");
